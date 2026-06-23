@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+const API_URL = process.env.REACT_APP_API_URL;
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -27,7 +28,7 @@ function App() {
     try {
       setLoading(true);
 
-      let url = "http://localhost:5000/products?limit=20";
+      let url = `${API_URL}/products?limit=20`;
 
       if (category) {
         url += `&category=${category}`;
@@ -58,7 +59,7 @@ function App() {
 
   async function addProduct() {
     try {
-      await fetch("http://localhost:5000/products", {
+      await fetch(`${API_URL}/products`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -83,7 +84,7 @@ function App() {
 
   async function deleteProduct(id) {
     try {
-      await fetch(`http://localhost:5000/products/${id}`, {
+      await fetch(`${API_URL}/products/${id}`, {
         method: "DELETE",
       });
 
@@ -102,7 +103,7 @@ function App() {
       }
 
       const response = await fetch(
-        `http://localhost:5000/products/search?keyword=${search}`,
+        `${API_URL}/products/search?keyword=${encodeURIComponent(search)}`,
       );
 
       const data = await response.json();
