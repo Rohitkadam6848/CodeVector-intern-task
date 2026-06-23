@@ -7,16 +7,16 @@ const Header = () => {
         <h1 className="text-3xl font-bold">ShopSphere</h1>
 
         <nav className="flex gap-8 text-lg">
-          <a href="#" className="hover:text-blue-400 transition">
+          <a href="/" className="hover:text-blue-400 transition">
             Home
           </a>
-          <a href="#" className="hover:text-blue-400 transition">
+          <a href="/" className="hover:text-blue-400 transition">
             Products
           </a>
-          <a href="#" className="hover:text-blue-400 transition">
+          <a href="/" className="hover:text-blue-400 transition">
             Categories
           </a>
-          <a href="#" className="hover:text-blue-400 transition">
+          <a href="/" className="hover:text-blue-400 transition">
             Contact
           </a>
         </nav>

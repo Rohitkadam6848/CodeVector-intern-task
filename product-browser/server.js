@@ -11,7 +11,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:3000", // local development
-      "https://your-frontend.vercel.app", // deployed frontend
+      "https://codevector-intern-task-2.onrender.com", // deployed frontend
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
   }),
